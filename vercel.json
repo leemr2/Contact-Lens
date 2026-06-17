@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/contact_lens_profitability_fy26_v2.html" }
+  ]
+}
