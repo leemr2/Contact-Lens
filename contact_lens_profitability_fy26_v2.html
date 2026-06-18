@@ -101,7 +101,7 @@ td{padding:7px 8px;font-size:12px;border-bottom:0.5px solid var(--color-border-t
     <span style="font-size:11px;color:var(--color-text-secondary);display:flex;align-items:center;gap:5px"><span style="width:9px;height:9px;border-radius:2px;background:#378ADD;display:inline-block"></span>CooperVision</span>
     <span style="font-size:11px;color:var(--color-text-secondary);display:flex;align-items:center;gap:5px"><span style="width:9px;height:9px;border-radius:2px;background:#1D9E75;display:inline-block"></span>Alcon</span>
   </div>
-  <p style="font-size:11px;color:var(--color-text-tertiary);margin-top:10px">Annual supply: monthly = 4 × 6-pk · daily = 8 × 90-pk · weekly = 4 × 27-pk (both eyes). Profit = MSRP minus customer/partner price.</p>
+  <p style="font-size:11px;color:var(--color-text-tertiary);margin-top:10px">Annual supply: monthly = 4 × 6-pk · biweekly = 8 × 6-pk · daily = 8 × 90-pk · weekly = 4 × 27-pk (both eyes). Profit = MSRP minus customer/partner price.</p>
 </section>
 
 <section id="s2" class="sec">
@@ -118,7 +118,7 @@ td{padding:7px 8px;font-size:12px;border-bottom:0.5px solid var(--color-border-t
     </tr></thead>
     <tbody id="rtb"></tbody></table>
   </div>
-  <p style="font-size:11px;color:var(--color-text-tertiary);margin-top:10px">Green margin = above 55%. "winner" = highest annual profit in category. Annual supply: monthly 4×6-pk · daily 8×90-pk · weekly 4×27-pk.</p>
+  <p style="font-size:11px;color:var(--color-text-tertiary);margin-top:10px">Green margin = above 55%. "winner" = highest annual profit in category. Annual supply: monthly 4×6-pk · biweekly 8×6-pk · daily 8×90-pk · weekly 4×27-pk.</p>
 </section>
 
 <section id="s3" class="sec">
@@ -173,7 +173,7 @@ td{padding:7px 8px;font-size:12px;border-bottom:0.5px solid var(--color-border-t
   </div>
   <p style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 8px">Extra annual profit per patient — private label vs branded (sorted high to low)</p>
   <div style="position:relative;width:100%;height:360px">
-    <canvas id="plc" role="img" aria-label="Horizontal bar chart showing extra annual profit per patient from using VS private label vs branded equivalents, ranging from $24 to $148">Extra profit ranges from $24 (AQUACLEAR 110) to $148 (FRESH DAY Multifocal) per patient per year.</canvas>
+    <canvas id="plc" role="img" aria-label="Horizontal bar chart showing extra annual profit per patient from using VS private label vs branded equivalents, ranging from $33 to $148">Extra profit ranges from $33 (AQUACLEAR) to $148 (FRESH DAY Multifocal) per patient per year.</canvas>
   </div>
 </section>
 
@@ -185,13 +185,13 @@ var RAW=[
   {cat:"Monthly Sphere",boxes:4,type:"cv",   name:"Biofinity Energys\u00ae",    cost:38.25,msrp:75.25, note:""},
   {cat:"Monthly Sphere",boxes:4,type:"pl",   name:"AQUACLEAR\u00ae",            cost:27.75,msrp:60.50, note:"\u2261 Biofinity"},
   {cat:"Monthly Sphere",boxes:4,type:"cv",   name:"Biofinity\u00ae",            cost:36.00,msrp:60.50, note:""},
-  {cat:"Monthly Sphere",boxes:4,type:"pl",   name:"AQUACLEAR\u00ae 110",        cost:21.25,msrp:44.75, note:"\u2261 Avaira Vitality"},
+  {cat:"BiWeekly Sphere",boxes:8,type:"pl",   name:"AQUACLEAR\u00ae 110",        cost:21.25,msrp:44.75, note:"\u2261 Avaira Vitality"},
   {cat:"BiWeekly Sphere",boxes:8,type:"cv",   name:"Avaira Vitality\u00ae",      cost:27.25,msrp:44.75, note:""},
   {cat:"Monthly Sphere",boxes:4,type:"cv",   name:"Proclear\u00ae Sphere",      cost:52.50,msrp:73.00, note:""},
   {cat:"Monthly Toric", boxes:4,type:"pl",   name:"AQUACLEAR\u00ae Toric",      cost:36.50,msrp:87.00, note:"\u2261 Biofinity Toric"},
   {cat:"Monthly Toric", boxes:4,type:"alcon",name:"TOTAL30\u00ae Astigmatism",  cost:52.10,msrp:92.70, note:"Partner price"},
   {cat:"Monthly Toric", boxes:4,type:"cv",   name:"Biofinity\u00ae Toric",      cost:47.00,msrp:87.00, note:""},
-  {cat:"Monthly Toric", boxes:4,type:"pl",   name:"AQUACLEAR\u00ae 110 Toric",  cost:24.50,msrp:64.00, note:"\u2261 Avaira Vitality T."},
+  {cat:"BiWeekly Toric", boxes:8,type:"pl",   name:"AQUACLEAR\u00ae 110 Toric",  cost:24.50,msrp:64.00, note:"\u2261 Avaira Vitality T."},
   {cat:"BiWeekly Toric", boxes:8,type:"cv",   name:"Avaira Vitality\u00ae Toric",cost:31.50,msrp:64.00, note:""},
   {cat:"Monthly Toric", boxes:4,type:"cv",   name:"Proclear\u00ae Toric",       cost:65.50,msrp:97.00, note:""},
   {cat:"Monthly MF",    boxes:4,type:"pl",   name:"AQUACLEAR\u00ae Multifocal", cost:49.25,msrp:113.00,note:"\u2261 Biofinity MF"},
@@ -259,7 +259,7 @@ function initS1(){
   var mdata=[
     {l:"Highest annual profit",v:"$644/yr",s:"REVEAL MF 1-Day \u00b7 Daily MF",c:"#639922"},
     {l:"Best profit margin",v:"60.5%",s:"AQUACLEAR Premium \u00b7 Monthly Sphere",c:"#7F77DD"},
-    {l:"PL advantage range",v:"$24\u2013$148",s:"extra profit/patient/yr at same MSRP",c:"#1D9E75"}
+    {l:"PL advantage range",v:"$33\u2013$148",s:"extra profit/patient/yr at same MSRP",c:"#1D9E75"}
   ];
   document.getElementById("mets").innerHTML=mdata.map(function(m){
     return '<div class="mc"><div style="font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px">'+m.l+'</div><div style="font-size:21px;font-weight:500;color:'+m.c+';line-height:1.1">'+m.v+'</div><div style="font-size:11px;color:var(--color-text-tertiary);margin-top:3px">'+m.s+'</div></div>';
@@ -344,9 +344,9 @@ function initS3(){
 var PL=[
   {cat:"Monthly Sphere",pl:"AQUACLEAR Premium\u2122",  cv:"Biofinity Energys\u00ae",    plC:29.75,cvC:38.25,msrp:75.25, bx:4},
   {cat:"Monthly Sphere",pl:"AQUACLEAR\u00ae",          cv:"Biofinity\u00ae",            plC:27.75,cvC:36.00,msrp:60.50, bx:4},
-  {cat:"Monthly Sphere",pl:"AQUACLEAR\u00ae 110",      cv:"Avaira Vitality\u00ae",      plC:21.25,cvC:27.25,msrp:44.75, bx:4},
+  {cat:"BiWeekly Sphere",pl:"AQUACLEAR\u00ae 110",      cv:"Avaira Vitality\u00ae",      plC:21.25,cvC:27.25,msrp:44.75, bx:8},
   {cat:"Monthly Toric", pl:"AQUACLEAR\u00ae Toric",    cv:"Biofinity\u00ae Toric",      plC:36.50,cvC:47.00,msrp:87.00, bx:4},
-  {cat:"Monthly Toric", pl:"AQUACLEAR\u00ae 110 Toric",cv:"Avaira Vitality\u00ae Toric",plC:24.50,cvC:31.50,msrp:64.00, bx:4},
+  {cat:"BiWeekly Toric", pl:"AQUACLEAR\u00ae 110 Toric",cv:"Avaira Vitality\u00ae Toric",plC:24.50,cvC:31.50,msrp:64.00, bx:8},
   {cat:"Monthly MF",    pl:"AQUACLEAR\u00ae Multifocal",cv:"Biofinity\u00ae Multifocal",plC:49.25,cvC:63.50,msrp:113.00,bx:4},
   {cat:"Daily Sphere",  pl:"REVEAL\u2122 1-Day Premium",cv:"MyDay Energys\u00ae",       plC:66.75,cvC:75.25,msrp:132.25,bx:8},
   {cat:"Daily Sphere",  pl:"REVEAL\u2122 1-Day",       cv:"MyDay\u00ae",               plC:57.50,cvC:65.00,msrp:115.25,bx:8},
